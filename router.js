@@ -1,4 +1,4 @@
-function homeRoute(req, res){
+function home(req, res){
 	if(req.url === "/"){
 	 res.writeHead(200, {'Content-Type': 'text/plain'});
   	 res.write("Header\n");
@@ -7,7 +7,7 @@ function homeRoute(req, res){
   }
 }
 
-function userRoute(req,res){
+function user(req,res){
 	var username = req.url.replace("/", "")
 	if(username.length > 0 ){
 		 res.writeHead(200, {'Content-Type': 'text/plain'});
@@ -16,3 +16,6 @@ function userRoute(req,res){
   	 	res.end("Footer\n")
 	}
 }
+
+module.exports.home = home;
+module.exports.user = user
